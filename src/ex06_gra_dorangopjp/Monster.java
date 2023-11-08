@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Monster {
     private final String name, type, strongAgainst, weakAgainst;
+    // Stats turned into protected
     protected int maxHP, hp, atk, def, xp, lvl;
     private boolean guard, charge;
     private static ArrayList<Monster> monsterList = new ArrayList<>();
@@ -41,13 +42,6 @@ public class Monster {
     public static ArrayList<Monster> getMonsterList() {
         return monsterList;
     }
-    public void setAtk(int a) {
-        this.atk = a;
-    }
-    public void setDef(int d) {
-        this.def = d;
-    }
-
     public void attack(Monster m){
         int damage = (int) ((atk*atk)/(double)(atk+m.getDef()));    // damage is calculated as double, then cast as int
         boolean strong = false, weak = false;

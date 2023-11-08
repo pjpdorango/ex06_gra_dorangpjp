@@ -8,23 +8,23 @@ package ex06_gra_dorangopjp;
  *
  * @author pj
  */
-public class FireType extends Monster {
-    public FireType(String n, int m, int base) {
-        super(n, "Fire", "Grass", "Water", m, base);
-        // Sets atk to 1.3x and def to 0.7x
-        atk *= 1.3;
-        def *= 0.7;
+public class WaterType extends Monster {
+    public WaterType(String n, int m, int base) {
+        super(n, "Water", "Fire", "Grass", m, base);
+        // Sets atk to 0.7x and atk to 1.3x
+        atk *= 0.7;
+        def *= 1.3;
     }
     
     @Override
-    public void special(){
+    public void special() {
         // As long as hp can still be reduced by 10%
         if (hp > (maxHP * 0.1)) {
-            // Increase atk by 2, and
+            // Increase def by 2, and
             // reduce hp by 10% of maxHP
-            atk += 2;
+            def += 2;
             hp -= maxHP * 0.1;
-            System.out.println(getName() + " reduced its HP by " + (int) (maxHP * 0.1) + " to increase its atk by 2!");
+            System.out.println(getName() + " reduced its HP by " +(int) (maxHP * 0.1) + " to increase its atk by 2!");
         }
     }
 }
