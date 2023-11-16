@@ -25,7 +25,7 @@ public class EX06_GRA_DorangoPJP {
         // 0 vs 1
         // 1 vs 2
         // 2 vs 0
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 3; i++) {
             // Generate the two monsters to battle
             // Since there are only 3 enemies, i1 is 0 - 2 (3 options)
             // i1 and i2 are temporary indexes of monster 1 and 2 respectively
@@ -47,6 +47,7 @@ public class EX06_GRA_DorangoPJP {
     
     public static void battle(Monster monster1, Monster monster2) {
         Random rand = new Random();
+        int round = 1;
             
         // BATTLE START
         System.out.println("----------------------------------------");
@@ -55,8 +56,6 @@ public class EX06_GRA_DorangoPJP {
 
         System.out.println(monster1.getName() + " - " + monster1.getHP() + " HP");
         System.out.println(monster2.getName() + " - " + monster2.getHP() + " HP");
-            
-        int round = 1;
         // Continue while both monsters have hp higher than 0.
         while (monster1.getHP() > 0 && monster2.getHP() > 0) {
             Monster monster;
