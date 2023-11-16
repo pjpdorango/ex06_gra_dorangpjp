@@ -89,7 +89,7 @@ public class Monster {
     public void rest(){
         hp += maxHP * 0.15;
         if(hp > maxHP) hp = maxHP;
-        System.out.println(name + " rested. It's health is now " + hp + ".");
+        System.out.println(name + " rested. Its health is now " + hp + ".");
     }
 
     public void special(){
@@ -110,8 +110,19 @@ public class Monster {
             hp += 5;
             atk += 2;
             def += 2;
-            System.out.println(name + " levelled up to " + lvl + "!");
+            System.out.println(name + " leveled up to " + lvl + "!");
         }
     }
-
+    
+    // ADDED: printStats function for debug
+    public void printStats() {
+        System.out.println(getName()+ "'s Stats:");
+        System.out.println("Atk: " + atk);
+        System.out.println("Def: " + def);
+        System.out.println("HP: " + maxHP);
+    }
+    
+    // ADDED: resetStats function to reset the special boosts after each battle
+    // Is overriden in each subclass, on default is empty
+    public void resetStats() {  }
 }
