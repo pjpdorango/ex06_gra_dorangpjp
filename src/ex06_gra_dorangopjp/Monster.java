@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Monster {
     private final String name, type, strongAgainst, weakAgainst;
-    // Stats turned into protected
+    // CHANGED: Stats turned into protected
     protected int maxHP, hp, atk, def, xp, lvl;
     private boolean guard, charge;
     private static ArrayList<Monster> monsterList = new ArrayList<>();
@@ -112,14 +112,6 @@ public class Monster {
             def += 2;
             System.out.println(name + " leveled up to " + lvl + "!");
         }
-    }
-    
-    // ADDED: printStats function for debug
-    public void printStats() {
-        System.out.println(getName()+ "'s Stats:");
-        System.out.println("Atk: " + atk);
-        System.out.println("Def: " + def);
-        System.out.println("HP: " + maxHP);
     }
     
     // ADDED: resetStats function to reset the special boosts after each battle
